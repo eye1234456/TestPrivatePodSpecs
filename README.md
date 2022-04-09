@@ -19,6 +19,14 @@ pod lib lint
 pod lib lint --skip-import-validation
 // 验证完成后，将库推到自己的私有仓库集里
 pod repo push XXKitSpec PodDemoLibrary.podspec  #前面是本地Repo名字 后面是podspec名字
+// 如果一直lint不成功，也push不成功，可以手动管理上传到git上，本质上是一个文件夹
+// 在仓库手动添加版本管理
+helloSDK/0.1.0/helloSDK.spec
+helloSDK/0.2.0/helloSDK.spec
+// 更新所有仓库集
+pod repo update
+// 只更新特定的仓库集
+pod repo update TestPrivatePodSpecs
 ```
 ------
 
@@ -60,6 +68,10 @@ pod repo push XXKitSpec PodDemoLibrary.podspec  #前面是本地Repo名字 后�
 // 在仓库手动添加版本管理
 helloSDK/0.1.0/helloSDK.spec
 helloSDK/0.2.0/helloSDK.spec
+// 更新所有仓库集
+pod repo update
+// 只更新特定的仓库集
+pod repo update TestPrivatePodSpecs
 ```
 
 使用创建好的本地库
